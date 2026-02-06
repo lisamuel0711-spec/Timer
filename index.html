@@ -102,7 +102,15 @@ select:focus, input:focus{
 <body>
   <div class="card">
     <h1>Timer</h1>
-    <p class="sub">　What ever you like </p> <div class="controls">
+    <p id="quoteDisplay" class="sub">What ever you like</p>
+
+<div class="quoteBox">
+  <input id="quoteInput" type="text" placeholder="Type your own quote…" />
+  <button id="saveQuote" type="button">Save</button>
+</div>
+
+<div class="controls">
+
   <label class="field">
     <span>Duration</span>
     <select id="preset">
@@ -254,6 +262,10 @@ saveQuote.addEventListener("click", () => {
   quoteDisplay.textContent = text;
   localStorage.setItem(QUOTE_KEY, text);
   quoteInput.value = "";
+});
+    
+quoteInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") saveQuote.click();
 });
 
   </script>

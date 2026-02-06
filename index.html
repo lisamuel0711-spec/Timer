@@ -31,12 +31,13 @@
   color: #555;
 }
 select, input{
-  width: 160px;
-  padding: 10px 12px;
+  width: min(240px, 70vw) ; 
+  padding: 8px 10px;        /* slightly smaller */
   border-radius: 14px;
   border: 1px solid #eaeaea;
   background: #fff;
-  font-size: 14px;
+  font-size: 13px;
+  color: #333;
   outline: none;
 }
 select:focus, input:focus{
@@ -64,8 +65,8 @@ select:focus, input:focus{
     h1 { margin: 0 0 14px; font-size: 20px; font-weight: 600; }
     .sub{
   margin: 0 0 18px;
-  font-size: 14px;
-  color: #555;
+  font-size: italic; 18px;
+  color: #222;
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
@@ -94,6 +95,12 @@ select:focus, input:focus{
 
     svg { display: block; margin: 14px auto 0; }
     #label { font-size: 36px; font-weight: 500; }
+    
+#quoteDisplay{
+  max-width: 34ch;          /* keeps lines from getting too wide */
+  margin-left: auto;
+  margin-right: auto;
+}
 
     
   </style>

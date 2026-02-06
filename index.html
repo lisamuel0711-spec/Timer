@@ -18,10 +18,10 @@
 
     .controls{
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
   margin: 10px 0 4px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .field{
   display: grid;
@@ -31,15 +31,22 @@
   color: #555;
 }
 select, input{
-  width: min(240px, 70vw) ; 
-  padding: 8px 10px;        /* slightly smaller */
+  width: 160px;
+  padding: 10px 12px;
   border-radius: 14px;
   border: 1px solid #eaeaea;
   background: #fff;
-  font-size: 13px;
-  color: #333;
+  font-size: 14px;
   outline: none;
+  color: #333;
 }
+
+#preset, #custom{
+  width: 130px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+    
 select:focus, input:focus{
   border-color: #d7d7d7;
 }
@@ -78,7 +85,9 @@ select:focus, input:focus{
   flex-wrap: wrap;
 }
 #quoteInput{
-  width: min(320px, 78vw);
+  width: min(240px, 70vw);
+  padding: 8px 10px;
+  font-size: 13px;
 }
 #saveQuote{
   padding: 10px 14px;
@@ -96,6 +105,10 @@ select:focus, input:focus{
     svg { display: block; margin: 14px auto 0; }
     #label { font-size: 36px; font-weight: 500; }
     
+  @media (max-width: 340px){
+  .controls{ flex-wrap: wrap; }
+  #preset, #custom{ width: 160px; }
+}
 
     
   </style>

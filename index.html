@@ -15,6 +15,7 @@
   <title> Timer </title>
   <style>
 
+
     .controls{
   display: flex;
   gap: 12px;
@@ -68,8 +69,19 @@ select:focus, input:focus{
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
-
-
+.quoteBox{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 6px 0 14px;
+  flex-wrap: wrap;
+}
+#quoteInput{
+  width: min(320px, 78vw);
+}
+#saveQuote{
+  padding: 10px 14px;
+}
     button {
       border: 1px solid #e5e5e5;
       background: white;
@@ -82,13 +94,15 @@ select:focus, input:focus{
 
     svg { display: block; margin: 14px auto 0; }
     #label { font-size: 36px; font-weight: 500; }
+
+    
   </style>
 </head>
 
 <body>
   <div class="card">
     <h1>Timer</h1>
-    <p class="sub">　安忍不動如大地，靜觀事態笑風雪😄 </p> <div class="controls">
+    <p class="sub">　What ever you like </p> <div class="controls">
   <label class="field">
     <span>Duration</span>
     <select id="preset">
@@ -221,6 +235,27 @@ custom.addEventListener("change", () => {
     };
 
     render();
+
+    
+const quoteDisplay = document.getElementById("quoteDisplay");
+const quoteInput = document.getElementById("quoteInput");
+const saveQuote = document.getElementById("saveQuote");
+
+const QUOTE_KEY = "timer_quote_v1";
+
+// Load saved quote on startup
+const saved = localStorage.getItem(QUOTE_KEY);
+if (saved) quoteDisplay.textContent = saved;
+
+// Save button
+saveQuote.addEventListener("click", () => {
+  const text = quoteInput.value.trim();
+  if (!text) return;
+  quoteDisplay.textContent = text;
+  localStorage.setItem(QUOTE_KEY, text);
+  quoteInput.value = "";
+});
+
   </script>
   <script>
   if ("serviceWorker" in navigator) {

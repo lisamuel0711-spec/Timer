@@ -1,4 +1,4 @@
-const CACHE_NAME = "zen-timer-v2";
+const CACHE_NAME = "zen-timer-v3";
 const ASSETS = [
   "./",
   "./index.html",
